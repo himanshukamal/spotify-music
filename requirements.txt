@@ -6,9 +6,9 @@ colorama==0.4.4
 decorator==4.4.2
 Flask==1.1.2
 idna==2.10
-ipdb==0.13.7
-ipython==7.21.0
-ipython-genutils==0.2.0
+
+
+
 itsdangerous==1.1.0
 jedi==0.18.0
 Jinja2==2.11.3

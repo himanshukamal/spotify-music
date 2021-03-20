@@ -1,0 +1,52 @@
+<html>
+<head>
+	<!-- CSS only -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ==" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns">
+				<h1>SPOTify Tracks</h1>
+			</div>
+		</div>
+		<form class="form" action = "http://localhost:5000/" method = "post">
+			<div class="row">
+				<div class="eight columns">	
+					<p class="text_box">
+						<input class="text_box_input" type="text" placeholder="Surf for an artist or song" name = "nm" />
+					</p>
+				</div>
+				<div class="four columns">
+					<input class="submit_button" type = "submit" value = "submit" />
+				</div>
+			</div>
+		</form>
+
+		{% if tracks %} 
+		{% for track in tracks %}
+		<div class="tile row">
+			<div class="four columns">
+				<img src={{track['album']['images'][1]['url']}}>
+			</div>	
+
+				<div class="six columns">
+					<p class="song_name">{{track['name']}}</p>
+					<p class="artist_name">{{track['artists'][0]['name']}}</p>
+
+				<audio controls>
+					<source src="{{track['preview_url']}}" type="">
+				</audio>
+					<p class="audio_link"><a href="{{track['external_urls']['spotify']}}"><i class="fab fa-spotify"></i>Listen on Spotify</a></p>
+
+			</div>
+		</div>
+		{% endfor %}
+		{% endif %}
+	</body>
+	</html>

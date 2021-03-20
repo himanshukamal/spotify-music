@@ -25,6 +25,9 @@ h1 {
 	font-family: Lato;
 
 }
+.albumart {
+	max-width: 100%;
+}
 .form {
 	margin: 3em auto;
 }
@@ -59,7 +62,15 @@ p.artist_name {
 	color: #1ed760;
 }
 .whitebtn, .whitebtn:hover {
-	color: #fff; !important
+	color: #fff !important;
+}
+figure.popularity {
+	display: inline-flex;
+	margin-top: 35px;
+    margin-bottom: 25px;
+}
+figure.popularity > img.flame {
+	width: 2em;
 }
 .audio_link > a > img {
 	height: 2em;

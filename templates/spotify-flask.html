@@ -37,22 +37,29 @@
 		{% for track in tracks %}
 		<div class="tile row">
 			<div class="four columns">
-				<img src={{track['album']['images'][1]['url']}}>
+				<img class="albumart" src={{track['album']['images'][1]['url']}}>
 			</div>	
 
-			<div class="six columns songinfo">
+			<div class="eight columns songinfo">
 				<p class="song_name">{{track['name']}}</p>
 				<p class="artist_name">{{track['artists'][0]['name']}}</p>
 
 				<audio controls>
 					<source src="{{track['preview_url']}}" type="">
 				</audio>
-				<p class="audio_link">
-					<a href="{{track['external_urls']['spotify']}}">
-						<img src="https://logodownload.org/wp-content/uploads/2020/03/listen-on-spotify.png">
-					</a>
-				</p>
-
+				<div class="row">
+					<p class="audio_link four columns">
+						<a href="{{track['external_urls']['spotify']}}">
+							<img src="https://logodownload.org/wp-content/uploads/2020/03/listen-on-spotify.png">
+						</a>
+					</p>
+					<figure class="two columns popularity">
+						<img class="flame" title="popularity" src="{{url_for('static',filename='icons/flame.png')}}">
+						<figcaption>
+							{{track['popularity']}}
+						</figcaption>
+					</figure>
+				</div>
 			</div>
 		</div>
 		{% endfor %}
@@ -60,7 +67,7 @@
 	</div>
 	<footer class="row footer">
 					
-		<p class="twelve columns">Made by <strong>Himanshu kamal</strong></p>
+		<p class="twelve columns">Made by <strong>Himanshu Kamal</strong></p>
 		<p class="twelve columns">
 			Hosted on
 			<a href="https://github.com/himanshukamal/spotify-music">

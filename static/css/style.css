@@ -1,41 +1,95 @@
-body {
+html, body {
+    height:100%;
 	font-family: "Lato", sans-serif;
 	color: #fff;
 	background-color: #232323;
 }
-
+body {
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1 0 auto;
+  margin: 5em auto;
+}
+.footer {
+  flex-shrink: 0;
+    padding: 20px 10px;
+    color: #000000;
+    background-color: #1ED760;
+    text-align: center;
+    margin-top: 3em;
+}
 h1 {
 	text-align: center;
 	font-family: Lato;
 
 }
+.form {
+	margin: 3em auto;
+}
 .text_box_input {
 	width: 100%;
 }
+.song_info {
+	margin: 1em 2em;
+}
 .song_name {
 	font-size: 2em;
-	margin-left: 2em;
 
 }
 .tile {
 	background-color: transparent;
-	margin-top: 1em;
-	border: 1px solid #fff;
+	margin:2em auto;
+	box-shadow: 0px 5px 10px #333;
 
-}
-.six {
-	margin-left: 1em;
 }
 
 .second_half {
 	margin-left: 2em;
 }
 p.artist_name {
-	margin-left: 2em;
 	color: #fff;
 }
 .audio_link {
 	font-size: 2em;
-    margin-left: 1em;
-    margin-top: 1em;
+	margin-top: 1em;
 }
+.audio_link.a {
+	color: #1ed760;
+}
+.whitebtn, .whitebtn:hover {
+	color: #fff; !important
+}
+.audio_link > a > img {
+	height: 2em;
+}
+
+  /*icons*/
+.python_icon {
+	font-size: 4em;
+	color: #3776AB;
+}
+.spotify_icon {
+	font-size: 4em;
+	color: #03fc0b;
+}
+.html_icon {
+	color: pink;
+	font-size: 4em;
+} 	
+.github_icon {
+	font-size: 4em;
+}
+.font_awesome_icon {
+	font-size: 4em;
+	color: #007eff;
+}
+.css_icon {
+	color: red;
+}
+
+.white_icon {
+	font-size: 3em;
+	color: #fff;
+}	

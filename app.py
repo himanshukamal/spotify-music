@@ -23,12 +23,8 @@ def login():
 		# for idx, track in enumerate(results['tracks']['items']):
 		# 	print(idx, track['name'])
 		songlist = results['tracks']['items']
-		# artists = []
-		# for artist in songinfo['artists']:
-		# 	artists.append(artist['name'])
-		# artists_string = ", ".join(artists)
 
-		# return render_template('spotify-flask.html', tracks=songlist)
+		return render_template('spotify-flask.html', tracks=songlist)
 		# return jsonify(results)
 	else:
 		user = request.args.get('nm')

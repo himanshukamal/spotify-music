@@ -6,9 +6,8 @@ from spotipy.oauth2 import SpotifyClientCredentials
 
 
 
-sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(
-	client_id="d4174aeab1494d20adea989f2d6d1142",
-	client_secret="1b1e965662bb4edc9e58e4aa0becc135"))
+sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id=os.getenv('CLIENT_ID',
+	client_secret=os.getenv('CLIENT_SECRET')))
 
 
 
@@ -26,7 +25,7 @@ def login():
 		# 	artists.append(artist['name'])
 		# artists_string = ", ".join(artists)
 
-		return render_template('spotify-flask.html', tracks=songlist)
+		# return render_template('spotify-flask.html', tracks=songlist)
 		# return jsonify(results)
 	else:
 		user = request.args.get('nm')
